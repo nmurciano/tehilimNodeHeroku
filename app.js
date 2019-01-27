@@ -1,3 +1,5 @@
+const cool = require('cool-ascii-faces')
+
 var express = require('express');
 var app = express();
 
@@ -26,6 +28,8 @@ var UtilisateurController = require('./Utilisateur/utilisateurController');
 var ChaineController = require('./Chaine/chaineController');
 app.use('/utilisateur', UtilisateurController);
 app.use('/chaine', ChaineController);
+
+app.get('/cool', (req, res) => res.send(cool()))
 
 
 module.exports = app;
